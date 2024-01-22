@@ -3,7 +3,7 @@ package de.dhbwka.java.exercise.operators;
 public class Easter {
 
     public static void main(String[] args) {
-        System.out.println(dayNumberToDate(easterDate(2025)));
+        System.out.println(dayNumberToDate(easterDate(2024)));
     }
 
     public static int easterDate(int jahr) {
