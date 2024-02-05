@@ -2,6 +2,7 @@ package de.dhbwka.java.example;
 
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -33,6 +34,7 @@ public class Main {
         {
             double notANumber=Double.NaN;
             System.out.println(notANumber);
+            int[] a = new int[10];
         }
     }
 
