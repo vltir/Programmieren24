@@ -71,6 +71,35 @@ public class Collatz {
         if(n%2==0){
             return n/2;
         }
-        return a+n+b;
+        return a*n+b;
+    }
+
+    //GPT
+
+    public static int collatzFunction(int n, int alpha, int beta) {
+        if (n % 2 == 0) {
+            return n / 2;
+        } else {
+            return alpha * n + beta;
+        }
+    }
+
+    public static int findK(int alpha, int beta, int target) {
+        int n = target;
+        int k = 0;
+        while (n != 1) {
+            n = collatzFunction(n, alpha, beta);
+            k++;
+        }
+        return k;
+    }
+
+    public static void main1(String[] args) {
+        int alpha = 3;
+        int beta = 1;
+        int target = 27;
+
+        int k = findK(alpha, beta, target);
+        System.out.println("Das kleinste k für f^k(27) = 1 ist: " + k);
     }
 }
