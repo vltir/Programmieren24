@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CurrencyCalculator {
-    public static float EXCHANGE = 1.09f;
+    public static float EXCHANGE = 1.0869f;
 
     private final JTextField inputTextField;
     private final JButton euroToDollarButton;
@@ -41,7 +41,7 @@ public class CurrencyCalculator {
             float euro = Float.parseFloat(text);
             inputTextField.setText(euro * factor + "");
         } catch (NumberFormatException e) {
-            inputTextField.invalidate();
+            inputTextField.setText("");
         }
     }
 
