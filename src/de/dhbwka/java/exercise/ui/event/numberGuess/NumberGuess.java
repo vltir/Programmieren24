@@ -17,11 +17,11 @@ public class NumberGuess {
     }
 
     private int makeGuess(int guess){
-        game.guesses++;
         if(game==null)return -2;
+        game.guesses++;
         if(guess> game.number)return 1;
         if(guess< game.number)return -1;
-        guessView.notifyGameOver(game.guesses);
+        guessView.notifyGameOver(game.guesses,guess);
         game=null;
         return 0;
     }
@@ -36,6 +36,7 @@ public class NumberGuess {
         private int guesses=0;
         public Game() {
             number = RANDOM.nextInt(1000)+1;
+            System.out.println(number);
         }
     }
 }

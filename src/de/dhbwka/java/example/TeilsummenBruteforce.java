@@ -4,8 +4,8 @@ import java.util.List;
 
 public class TeilsummenBruteforce {
     public static void main(String[] args) {
-        List<Integer> summanden = List.of(13, 11, 15, 12, 3, 8, 1, 16);
-        List<Integer> summen = List.of(18, 10, 61, 70, 69, 77);
+        List<Integer> summanden = List.of(211, 212, 424, 217, 13, 447, 473, 105);
+        List<Integer> summen = List.of(876, 1674, 853, 424, 1007, 1188, 1214, 1326, 1188, 1300, 529, 746, 746);
         for (int i = 0; i < 1 << summanden.size(); i++) {
             int sum = 0;
             for (int j = 0; j < summanden.size(); j++) {

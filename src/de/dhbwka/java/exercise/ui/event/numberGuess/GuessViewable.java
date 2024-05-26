@@ -12,7 +12,7 @@ public interface GuessViewable {
 
     void initView();
 
-    void notifyGameOver(int numberOfGuesses);
+    void notifyGameOver(int numberOfGuesses, int guess);
 
 
 
