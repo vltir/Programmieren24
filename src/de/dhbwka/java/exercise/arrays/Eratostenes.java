@@ -15,7 +15,7 @@ public class Eratostenes {
         List<Integer> primes = new ArrayList<>();
         IntStream.range(2, n + 1).forEach(sieve::add);
         while (!sieve.isEmpty()) {
-            int e = sieve.getFirst();
+            int e = sieve.get(0);
             primes.add(e);
             for (int i = 0; i < sieve.size(); i++) {
                 if (sieve.get(i) % e == 0) {
