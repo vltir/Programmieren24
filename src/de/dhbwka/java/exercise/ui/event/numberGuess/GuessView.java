@@ -21,11 +21,8 @@ public class GuessView implements GuessViewable{
                 int guessResult=enterGuessOperator.apply(guess);
                 if(guessResult==-2){
                     output.setText("First create a game please");
-                } else if (guessResult==0) {
-                    output.setText(guess+ "is correct");
-                }
-                else {
-                    output.setText(guess + "is too" + (guess>0?"high":"low"));
+                } else if (guessResult!=0) {
+                    output.setText(guess + " is too " + (guessResult>0?"high":"low")+"!");
                 }
             }catch (NumberFormatException ne){
                 System.err.println("Incorrect Input");
@@ -67,10 +64,13 @@ public class GuessView implements GuessViewable{
         panel.add(exit);
         output = new JLabel();
         panel.add(output);
+        frame.add(panel);
+        frame.setVisible(true);
     }
 
     @Override
-    public void notifyGameOver(int numberOfGuesses) {
-        output.setText(output.getText()+System.lineSeparator()+"You won with the Game"+ numberOfGuesses +" attempts.");
+    public void notifyGameOver(int numberOfGuesses, int guess) {
+        output.setText(guess+ " is correct!");
+        output.setText(output.getText()+" You won the Game in"+ numberOfGuesses +" attempts.");
     }
 }
