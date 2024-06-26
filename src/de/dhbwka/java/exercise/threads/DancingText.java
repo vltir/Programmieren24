@@ -55,7 +55,6 @@ public class DancingText {
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
             graphicsConsumer.accept(g);
-            repaint();
         }
     }
 }
