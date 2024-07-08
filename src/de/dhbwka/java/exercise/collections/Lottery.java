@@ -1,13 +1,10 @@
 package de.dhbwka.java.exercise.collections;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Lottery {
-    Random random = new Random();
     public Lottery() {
+        ExclusiveRandom random = new ExclusiveRandom();
         int capacity = 7;
         List<Integer> nums = new ArrayList<>(capacity);
         for (int i = 0; i < capacity-1; i++) {
@@ -25,6 +22,19 @@ public class Lottery {
 
     public static void main(String[] args) {
         new Lottery();
+    }
+    private static class ExclusiveRandom extends Random{
+        private static HashSet<Integer> pulled= new HashSet<>();
+        @Override
+        public int nextInt(int bound){
+            if(pulled.size()>=bound)throw new RuntimeException("Cannot pull another random Number");
+            int randomInt;
+            do{
+                randomInt = super.nextInt(bound);
+            }while (pulled.contains(randomInt));
+            pulled.add(randomInt);
+            return randomInt;
+        }
     }
 
 }
